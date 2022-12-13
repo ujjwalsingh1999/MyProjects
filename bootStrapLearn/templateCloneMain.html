@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<head lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Oswald&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Oswald&family=Source+Code+Pro:wght@300&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/f5310706a1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <title>Fashion Blog</title>
+<style>
+  body {
+    background-color: #ccc;
+    overflow-x: hidden;
+  }
+
+  .container-fluid {
+    height: 24px;
+  }
+
+  ul {
+    color: white !important;
+    font-size: 1em;
+    /* height: 100%; */
+  }
+
+  .bg-dark {
+    background-color: #000 !important;
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+    font-size: 3em;
+    line-height: 0;
+    margin: 10px 0px;
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 40px 0px 40px 0px;
+  }
+
+  .main {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .mark {
+    background-color: black !important;
+    color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .headImg {
+    max-width: 100%;
+    position: absolute;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  h6 {
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    margin: 10px 0px;
+    font-weight: 400;
+  }
+
+  .subscribeSec {
+    display: inline-grid;
+    text-align: left !important;
+    height: auto;
+    width: 100%;
+    position: relative;
+    top: 12em;
+    padding: 2em;
+    /*margin-left: 2em;*/
+    /* padding: 12px 24px!important;
+    transform: translate(0%,75%);*/
+  }
+
+  .subscribeSec>h1 {
+    color: white;
+    text-align: left;
+  }
+
+  .btn {
+    background-color: white;
+    color: black;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 900;
+    opacity: 0.6;
+    border-radius: 0px;
+    outline: black;
+    padding: 12px;
+    text-transform: uppercase;
+  }
+  .btn-danger {
+    border: none;
+    background-color: #f44336 !important;
+    height:36px;
+    text-transform: capitalize;
+  }
+  .btn-danger:hover {
+    color: black;
+    background-color: #ccc;
+    border-color: #ccc;
+  }
+
+  .title-blog {
+    margin-top: 20rem;
+    margin-left: 0px;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  hr {
+    margin: 5em 0em 3em 0em;
+  }
+
+  .title-blog>h3,
+  h5 {
+    text-align: center;
+    font-family: "Oswald";
+  }
+
+  .py-2 {
+    font-family: "Dancing Script", cursive;
+    padding-top: 1.5rem !important;
+  }
+
+  .title-blog>.text-center>img {
+    width: 100%;
+  }
+
+  .blogDesc {
+    text-align: left;
+    margin-top: 1em;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  header {
+    background-color: white;
+  }
+
+  .mainHeader {
+    text-align: center;
+    margin: 40px;
+  }
+
+  a:hover {
+    color: aqua !important;
+    background-color: gray;
+  }
+
+  .like-btn {
+    font-family: "Open Sans", sans-serif;
+    float: left;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000;
+    outline: 1px solid #ccc;
+    border: none;
+  }
+
+  .reply-btn {
+    float: right;
+    background-color: #000;
+    color: antiquewhite;
+    border: none;
+    outline: 2px solid black;
+  }
+
+  .reply-btn:hover {
+    opacity: 1;
+    color: #000;
+    background-color: #ccc;
+  }
+
+  .reply-text {
+    padding: 2px 9px 2px 9px;
+  }
+
+  .mainDiv {
+    background-color: white;
+  }
+
+  .comments {
+    width: 16.66%;
+  }
+
+  .btn-blog {
+    border: none;
+    display: inline-block;
+    padding: 8px 8px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .card {
+    text-align: left;
+    border: none;
+  }
+
+  .card-body {
+    padding: 1rem 0rem;
+  }
+
+  .card-title {
+    text-align: left;
+    float: left;
+  }
+
+  .card-text {
+    float: left;
+    margin-left: 16px;
+  }
+
+  .avtarDiv {
+    margin-top: 13px;
+    height: 180px;
+    width: 140px;
+  }
+
+  .w3-pad {
+    padding: 8px 16px !important;
+    margin-top: 36em;
+  }
+
+  .sideDesc {
+    text-align: left;
+    background-color: black;
+    color: white;
+    padding: 11px;
+  }
+
+  .sideDescHead {
+    font-family: "Oswald";
+  }
+
+  .sideHr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+
+  }
+
+  .popularSec {
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Oswald';
+    text-align: left;
+    padding: 0.5em;
+  }
+
+  .popularDesc {
+    text-align: left;
+    padding: 0rem;
+    background-color: #fff;
+  }
+
+  .postList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+  }
+
+  .webAD {
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .inspirationImg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .followSec {
+    text-align: left;
+    font-size: x-large;
+    padding: 0.5rem;
+  }
+
+  .followSec span:hover {
+    color: grey;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+            <li class="nav-item px-1">
+              <a class="nav-link" href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link" href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link" href="#"><i class="fa fa-flickr"></i></a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link" href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link" href="#"><i class="fa fa-github"></i></a>
+            </li>
+            <li class="nav-item px-1">
+              <a class="nav-link" href="#"><i class="fa fa-snapchat"></i></a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <i class="fa fa-search"></i>
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <header class="main">
+      <div class="mainHeader">
+        <h1>Jane Bloglife</h1>
+        <h6>
+          Welcome to the Blog of
+          <span class="mark">Jane's World</span>
+        </h6>
+      </div>
+    </header>
+  </div>
+  <div>
+    <header class="mainContent">
+      <img src="./templateImages/jane.jpg" alt="avtargirl" class="headImg" />
+      <div class="subscribeSec">
+        <h1>Jane's</h1>
+        <h1>Fashion Blog</h1>
+        <h6>
+          <button type="button" class="btn btn-outline-light btn-lg">
+            subscribe
+          </button>
+        </h6>
+      </div>
+    </header>
+  </div>
+  <div class="row title-blog w3-pad">
+    <div class="col-8 text-center mainDiv px-4">
+      <h3 class="py-2">Title Heading</h3>
+      <h5 class="py-3">
+        Title description
+        <span class="text-muted">7/05/20222</span>
+      </h5>
+      <img src="./templateImages/girl_hat.jpg" alt="a girl with a hat" />
+      <p class="blogDesc">
+        <strong>More Hats!</strong> I am crazy about hats these days. Some
+        text about this blog entry. Fashion fashion and mauris neque quam,
+        fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id
+        lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan
+        tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.
+        Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum,
+        porta lectus vitae, ultricies congue gravida diam non fringilla.
+      </p>
+      <p id="two" class="blogDesc" onclick="insert()">
+        Sunt in culpa qui officia deserunt mollit anim id est laborum
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco.
+      </p>
+      <p class="like-btn">
+        <button type="submit">
+          <i class="fa fa-thumbs-up btn-blog"></i>Like
+        </button>
+      </p>
+      <p class="reply-btn">
+        <button type="button" class="btn btn-outline-dark btn-blog" id="btn-reply">
+          <b> replies &nbsp;</b>
+          <span style="background-color: antiquewhite; color: #000" class="reply-text">1</span>
+        </button>
+      </p>
+
+      <div class="col-12">
+        <hr />
+        <div class="card" style="max-width: 100%">
+          <div class="row">
+            <div class="col-md-4 avtarDiv">
+              <img src="./templateImages/avatar_smoke.jpg" class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">George</h5>
+                <span class="card-text text-muted"><strong>May 3,2022 6:52PM</strong></span>
+                <br />
+              </div>
+              <div class="card-body">
+                <p>Great Post. Awesome.</p>
+                <p class="">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 px-4">
+      <div>
+        <div>
+          <img src="./templateImages/avatar_girl2.jpg" alt="girl eyes" style="width: 100%" />
+        </div>
+        <div class="sideDesc">
+          <h4 class="sideDescHead">My name</h4>
+          <p>
+            Just me, myself and I, exploring the universe of uknownment. I
+            have a heart of love and a interest of lorem ipsum and mauris
+            neque quam blog. I want to share my world with you.
+          </p>
+        </div>
+      </div>
+      <hr class="sideHr">
+      <div class="py-4">
+        <div class="popularSec">
+          <h4>
+            Popular Posts
+          </h4>
+        </div>
+        <div class="popularDesc">
+          <ul class="postList">
+            <li class="list-group-item list-group-item-action py-3">
+              <img src="./templateImages/avatar_smoke.jpg" alt="image" style="width: 50px; float: left;" class="me-3">
+              <span>
+                Denim
+              </span>
+              <br>
+              <span>Sed mattis nunc</span>
+            </li>
+            <li class="list-group-item list-group-item-action py-3">
+              <img src="./templateImages/bandmember.jpg" alt="image" style="width: 50px; float: left;" class="me-3">
+              <span>
+                Sweaters
+              </span>
+              <br>
+              <span>Praes tinci sed</span>
+            </li>
+            <li class="list-group-item list-group-item-action py-3">
+              <img src="./templateImages/workshop.jpg" alt="image" style="width: 50px; float: left;" class="me-3">
+              <span>
+                Workshop
+              </span>
+              <br>
+              <span>Ultricies congue</span>
+            </li>
+            <li class="list-group-item list-group-item-action py-3">
+              <img src="./templateImages/avatar_smoke.jpg" alt="image" style="width: 50px; float: left;" class="me-3">
+              <span>
+                Trends
+              </span>
+              <br>
+              <span>Lorem ipsum dipsum</span>
+            </li>
+          </ul>
+        </div>
+        <hr class="sideHr">
+        <div>
+          <div class="py-4">
+            <div class="popularSec">
+              <h4>
+                Advertisement
+              </h4>
+            </div>
+            <div style="
+              background-color: white;
+              height: 200px;" class="container py-3">
+              <div style="
+                background-color: #ccc;
+                height: 100%;">
+                <span class="webAD">
+                  your ad goes here</span></div>
+            </div>
+          </div>
+        </div>
+        <hr class="sideHr">
+      </div>
+    </div>
+    <div class="col-8 text-center mainDiv mt-4" style="height:fit-content;">
+      <h3 class="py-2">Title Heading</h3>
+      <h5 class="py-3">
+        Title description
+        <span class="text-muted">7/05/20222</span>
+      </h5>
+      <img src="./templateImages/man_hat.jpg" alt="a girl with a hat" />
+      <p class="blogDesc">
+        <strong>Hats!</strong>The trend this summer is hats for men! Some text
+        about this blog entry. Fashion fashion and mauris neque quam,
+        fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id
+        lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan
+        tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.
+        Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum,
+        porta lectus vitae, ultricies congue gravida diam non fringilla.
+      </p>
+      <p class="like-btn">
+        <button type="submit">
+          <i class="fa fa-thumbs-up btn-blog"></i>Like
+        </button>
+      </p>
+      <p class="reply-btn">
+        <button type="button" class="btn btn-outline-dark btn-blog" id="btn-reply">
+          <b> replies &nbsp;</b>
+          <span style="background-color: antiquewhite; color: #000" class="reply-text">2</span>
+        </button>
+      </p>
+    </div>
+    <div class="col-4 px-4">
+      <div class="popularSec">
+        <h4>Tags</h4>
+      </div>
+      <div style="background-color: #fff;padding: 1em;text-align: left;">
+        <p>
+          <span class="badge bg-dark mx-2 mb-2">Fashion</span>
+          <span class="badge rounded-pill bg-secondary mb-2">New York</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">London</span>
+          <span class="badge rounded-pill bg-secondary mb-2">Hats</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">Norway</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">Sweaters</span>
+          <span class="badge rounded-pill bg-secondary mb-2">ideas</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">Deals</span>
+          <span class="badge rounded-pill bg-secondary mb-2">Accessories</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">News</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">Clothing</span>
+          <span class="badge rounded-pill bg-secondary mb-2">Shopping</span>
+          <span class="badge rounded-pill bg-secondary mx-2 mb-2">Jeans</span>
+          <span class="badge rounded-pill bg-secondary mb-2">Trends</span>
+        </p>
+      </div>
+      <hr class="sideHr">
+      <div class="popularSec">
+        <h4>
+          Inspirations
+        </h4>
+      </div>
+      <div class="row" style="
+          background-color: white;
+          margin: 0;">
+        <div class="col-lg-6 col-sm-12 mt-2 py-1" style="background-color:#fff;">
+          <p>
+            <img src="./templateImages/jeans.jpg" class="inspirationImg py-1" alt="inspiration 1"></p>
+          <p>
+            <img src="./templateImages/team1.jpg" class="inspirationImg" alt="inspiration2"> </p>
+        </div>
+        <div class="col-lg-6 col-sm-12 mt-2 py-1">
+          <p>
+            <img src="./templateImages/avatar_hat.jpg" class="inspirationImg py-1" alt="inspiration 1"></p>
+          <p>
+            <img src="./templateImages/team4.jpg" class="inspirationImg" alt="inspiration2"> </p>
+        </div>
+      </div>
+      <hr class="sideHr">
+      <div class="popularSec">
+        <h4>
+          Follow Me
+        </h4>
+      </div>
+      <div style="background-color:#fff;" class="followSec">
+        <span><i class="fab fa-facebook-square"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fab fa-snapchat"></i></span>
+        <span><i class="fa fa-pinterest-p"></i></span>
+        <span><i class="fa fa-twitter"></i></span>
+        <span><i class="fa fa-linkedin"></i></span>
+      </div>
+      <hr class="sideHr">
+      <div class="popularSec">
+        <h4>Subscribe</h4>
+      </div>
+      <div style="background-color:#fff; height: fit-content;">
+        <!-- Button trigger modal -->
+        <p style="text-align:left; padding:0.5rem;">
+          Enter your e-mail below and get notified on the latest blog posts.
+          <input type="email" placeholder="enter your email" required style="width: 100%;" class="my-3">
+          <button type="button" class="btn-danger w-100 px-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            subscribe
+          </button>
+        </p>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SUBSCRIBE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p style="text-align:left;">Join my mailing list to receive updates on the latest blog posts and other things.<br>
+          <br>
+          <input type="email" placeholder="enter your email" required style="width: 100%;">
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-danger w-100" data-bs-dismiss="modal">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="col-8 text-center mainDiv">
+      <h3 class="py-2">Title Heading</h3>
+      <h5 class="py-3">
+        Title description
+        <span class="text-muted">7/05/20222</span>
+      </h5>
+      <img src="./templateImages/runway.jpg" alt="a ramp walk" />
+      <p class="blogDesc">
+        <strong>Hats!</strong>The trend this summer is hats for men! Some text
+        about this blog entry. Fashion fashion and mauris neque quam,
+        fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id
+        lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan
+        tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.
+        Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum,
+        porta lectus vitae, ultricies congue gravida diam non fringilla.
+      </p>
+      <p class="like-btn">
+        <button type="submit">
+          <i class="fa fa-thumbs-up btn-blog"></i>Like
+        </button>
+      </p>
+      <p class="reply-btn">
+        <button type="button" class="btn btn-outline-dark btn-blog" id="btn-reply">
+          <b> replies &nbsp;</b>
+          <span style="background-color: antiquewhite; color: #000" class="reply-text">2</span>
+        </button>
+      </p>
+    </div>
+  </div>
+  </body>
+  <footer>
+    
+  </footer>
+
+</html>
